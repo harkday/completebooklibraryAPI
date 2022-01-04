@@ -38,6 +38,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.0",
           "MyBookLibraryDataAccess": "1.0.0",
+          "MyBookLibraryUtility": "1.0.0",
           "Swashbuckle.AspNetCore": "5.6.3",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
@@ -1389,6 +1390,14 @@
         },
         "compile": {
           "MyBookLibraryModel.dll": {}
+        }
+      },
+      "MyBookLibraryUtility/1.0.0": {
+        "runtime": {
+          "MyBookLibraryUtility.dll": {}
+        },
+        "compile": {
+          "MyBookLibraryUtility.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -3824,6 +3833,11 @@
       "sha512": ""
     },
     "MyBookLibraryModel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyBookLibraryUtility/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1618,6 +1618,16 @@
         "runtime": {
           "bin/placeholder/MyBookLibraryModel.dll": {}
         }
+      },
+      "MyBookLibraryUtility/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/MyBookLibraryUtility.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyBookLibraryUtility.dll": {}
+        }
       }
     }
   },
@@ -6003,6 +6013,11 @@
       "type": "project",
       "path": "../MyBookLibraryModel/MyBookLibraryModel.csproj",
       "msbuildProject": "../MyBookLibraryModel/MyBookLibraryModel.csproj"
+    },
+    "MyBookLibraryUtility/1.0.0": {
+      "type": "project",
+      "path": "../MyBookLibraryUtility/MyBookLibraryUtility.csproj",
+      "msbuildProject": "../MyBookLibraryUtility/MyBookLibraryUtility.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6012,6 +6027,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.0",
       "MyBookLibraryDataAccess >= 1.0.0",
+      "MyBookLibraryUtility >= 1.0.0",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
   },
@@ -6044,6 +6060,9 @@
           "projectReferences": {
             "C:\\Users\\hp\\source\\repos\\MyBookLibraryAPI\\MyBookLibraryDataAccess\\MyBookLibraryDataAccess.csproj": {
               "projectPath": "C:\\Users\\hp\\source\\repos\\MyBookLibraryAPI\\MyBookLibraryDataAccess\\MyBookLibraryDataAccess.csproj"
+            },
+            "C:\\Users\\hp\\source\\repos\\MyBookLibraryAPI\\MyBookLibraryUtility\\MyBookLibraryUtility.csproj": {
+              "projectPath": "C:\\Users\\hp\\source\\repos\\MyBookLibraryAPI\\MyBookLibraryUtility\\MyBookLibraryUtility.csproj"
             }
           }
         }
