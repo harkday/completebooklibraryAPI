@@ -1,0 +1,12 @@
+C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryCore\bin\Debug\net5.0\MyBookLibraryCore.deps.json
+C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryCore\bin\Debug\net5.0\MyBookLibraryCore.dll
+C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryCore\bin\Debug\net5.0\ref\MyBookLibraryCore.dll
+C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryCore\bin\Debug\net5.0\MyBookLibraryCore.pdb
+C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryCore\obj\Debug\net5.0\MyBookLibraryCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryCore\obj\Debug\net5.0\MyBookLibraryCore.AssemblyInfoInputs.cache
+C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryCore\obj\Debug\net5.0\MyBookLibraryCore.AssemblyInfo.cs
+C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryCore\obj\Debug\net5.0\MyBookLibraryCore.csproj.CoreCompileInputs.cache
+C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryCore\obj\Debug\net5.0\MyBookLibraryCore.dll
+C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryCore\obj\Debug\net5.0\ref\MyBookLibraryCore.dll
+C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryCore\obj\Debug\net5.0\MyBookLibraryCore.pdb
+C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryCore\obj\Debug\net5.0\MyBookLibraryCore.csproj.AssemblyReference.cache
