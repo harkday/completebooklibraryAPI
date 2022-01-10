@@ -20,6 +20,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyBookLibraryDataAccess\MyBookLibraryDataAccess.csproj" />
+    <ProjectReference Include="..\MyBookLibraryModel\MyBookLibraryModel.csproj" />
+    <ProjectReference Include="..\MyBookLibraryServices\MyBookLibraryServices.csproj" />
     <ProjectReference Include="..\MyBookLibraryUtility\MyBookLibraryUtility.csproj" />
   </ItemGroup>
 

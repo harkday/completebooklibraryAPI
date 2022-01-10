@@ -63,3 +63,5 @@ C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryAPI\obj\Debug\net5.0\MyBo
 C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryAPI\obj\Debug\net5.0\MyBookLibraryAPI.genruntimeconfig.cache
 C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryAPI\bin\Debug\net5.0\MyBookLibraryUtility.dll
 C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryAPI\bin\Debug\net5.0\MyBookLibraryUtility.pdb
+C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryAPI\bin\Debug\net5.0\MyBookLibraryServices.dll
+C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryAPI\bin\Debug\net5.0\MyBookLibraryServices.pdb

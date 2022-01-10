@@ -1,4 +1,5 @@
-﻿using MyBookLibraryDataAccess.Repository.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using MyBookLibraryDataAccess.Repository.Interfaces;
 using MyBookLibraryModel.Model;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,12 @@ namespace MyBookLibraryDataAccess.Repository.Implementation
 {
     public class UserRepository : IUserRepository
     {
+        private readonly BookDbContext _context;
+
+        public UserRepository(BookDbContext context)
+        {
+            _context = context;
+        }
         public Task<bool> Add<T>(T entity)
         {
             throw new NotImplementedException();
@@ -17,7 +24,15 @@ namespace MyBookLibraryDataAccess.Repository.Implementation
 
         public bool AddUser(User user)
         {
-            throw new NotImplementedException();
+            var newUser = _context.Users.Add(user);
+            _context.SaveChanges();
+
+            if(newUser != null)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public bool Delete(User user)
@@ -25,19 +40,38 @@ namespace MyBookLibraryDataAccess.Repository.Implementation
             throw new NotImplementedException();
         }
 
-        public Task<User> GetUserByEmail(string email)
+        public async Task<User> GetUserByEmail(string email)
         {
-            throw new NotImplementedException();
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+            if(user != null)
+            {
+                return user;
+            }
+            else
+            {
+                throw new Exception("User not found");
+            }
         }
 
         public User GetUserById(int id)
         {
-            throw new NotImplementedException();
+            var user =  _context.Users.FirstOrDefault(u => u.Id == id);
+            if (user != null)
+            {
+                return user;
+            }
+            else
+            {
+                throw new Exception("User not found");
+            }
         }
 
-        public Task<List<User>> GetUsers()
+        public async Task<List<User>> GetUsers()
         {
-            throw new NotImplementedException();
+            List<User> users = new List<User>();
+            users = await _context.Users.ToListAsync();
+
+            return users;
         }
 
         public bool Update(User user)

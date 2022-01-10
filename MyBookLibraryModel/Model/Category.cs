@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyBookLibraryDataAccess.Repository
+namespace MyBookLibraryModel.Model
 {
-    class Seeding
+    class Category
     {
     }
 }
