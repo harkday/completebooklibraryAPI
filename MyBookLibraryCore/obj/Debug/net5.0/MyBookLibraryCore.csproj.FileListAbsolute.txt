@@ -9,4 +9,3 @@ C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryCore\obj\Debug\net5.0\MyB
 C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryCore\obj\Debug\net5.0\MyBookLibraryCore.dll
 C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryCore\obj\Debug\net5.0\ref\MyBookLibraryCore.dll
 C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryCore\obj\Debug\net5.0\MyBookLibraryCore.pdb
-C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryCore\obj\Debug\net5.0\MyBookLibraryCore.csproj.AssemblyReference.cache

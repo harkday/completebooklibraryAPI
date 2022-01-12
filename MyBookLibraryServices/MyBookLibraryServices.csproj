@@ -6,9 +6,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyBookLibraryDataAccess\MyBookLibraryDataAccess.csproj" />
+    <ProjectReference Include="..\MyBookLibraryUtility\MyBookLibraryUtility.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="iTextSharp" Version="5.5.13.2" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.15.0" />
   </ItemGroup>
 

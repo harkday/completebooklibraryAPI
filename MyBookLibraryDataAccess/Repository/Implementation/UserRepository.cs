@@ -35,9 +35,10 @@ namespace MyBookLibraryDataAccess.Repository.Implementation
             return false;
         }
 
-        public bool Delete(User user)
+        public void Delete(User user)
         {
-            throw new NotImplementedException();
+            _context.Users.Remove(user);
+            _context.SaveChanges();
         }
 
         public async Task<User> GetUserByEmail(string email)

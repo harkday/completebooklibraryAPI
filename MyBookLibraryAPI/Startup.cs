@@ -8,8 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using MyBookLibraryAPI.Controllers.Extension;
 using MyBookLibraryAPI.Services;
-using MyBookLibraryAPI.Services.Implementation;
 using MyBookLibraryAPI.Services.Interface;
 using MyBookLibraryDataAccess;
 using MyBookLibraryDataAccess.Repository;
@@ -39,13 +39,14 @@ namespace MyBookLibraryAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddApplicationServices(Configuration);
             services.AddScoped<ITokenService, TokenService>();
             services.AddControllers();
             services.AddDbContext<BookDbContext>(options => options.UseSqlServer(ConnectionString));
             services.AddTransient<IBookService, BookService>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IUserRepository, UserRepository>();
-            services.AddTransient<IJWTService, JWTService>();
+            services.AddTransient<ITokenService, TokenService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MyBookLibraryAPI", Version = "v1" });
@@ -65,6 +66,7 @@ namespace MyBookLibraryAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

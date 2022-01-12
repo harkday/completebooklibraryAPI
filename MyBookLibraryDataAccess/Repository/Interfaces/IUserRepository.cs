@@ -13,7 +13,7 @@ namespace MyBookLibraryDataAccess.Repository.Interfaces
         Task<List<User>> GetUsers();
         bool AddUser(User user);
         bool Update(User user);
-        bool Delete(User user);
+        void Delete(User user);
         User GetUserById(int id);
         Task<User> GetUserByEmail(string email);
     }

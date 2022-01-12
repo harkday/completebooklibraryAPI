@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyBookLibraryAPI.Services.Implementation;
 using MyBookLibraryDataAccess;
 using MyBookLibraryModel.DTOS;
 using MyBookLibraryModel.Model;
+using MyBookLibraryServices.Repository.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,18 +22,25 @@ namespace MyBookLibraryAPI.Controllers
             _userService = userService;
         }
 
-        [HttpGet]
+        [HttpGet("get-all-users")]
         public async Task<IActionResult> GetUsers()
         {
-            //return await _userService.Users();
-            return Ok();
+            var listOfUsers = new List<User>();
+            var users = await _userService.Users();
+            foreach (var user in users)
+            {
+                listOfUsers.Add(user);
+            }
+            return Ok(users);
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUser(int id)
+        [Authorize]
+
+        [HttpGet("get-by-email")]
+        public async Task<ActionResult> GetUser(string email)
         {
-            //return await _context.Users.FindAsync(id);
-            return Ok();
+            var user = await _userService.GetUser(email);
+            return Ok(user);
 
         }
 
@@ -41,6 +50,16 @@ namespace MyBookLibraryAPI.Controllers
             //return Ok(_context.Users.Add(user));
             return Ok();
         }
+
+        [HttpDelete]
+        public async Task<ActionResult> DeleteUser(string email)
+        {
+            await _userService.DeleteUser(email);
+            return Ok();
+        }
+
+
+
 
     }
 }

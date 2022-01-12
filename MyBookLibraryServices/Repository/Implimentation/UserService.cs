@@ -1,30 +1,30 @@
-﻿using MyBookLibraryAPI.Services.Interface;
+﻿using MyBookLibraryAPI.Services.Implementation;
 using MyBookLibraryDataAccess.Repository.Interfaces;
 using MyBookLibraryModel.Model;
+using MyBookLibraryServices.Repository.Interface;
 using MyBookLibraryUtility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace MyBookLibraryAPI.Services.Implementation
+namespace MyBookLibraryServices.Repository.Implimentation
 {
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepo;
-        private readonly IJWTService _jWTService;
+        private readonly ITokenService _jWTService;
 
-        public UserService(IUserRepository userRepository, IJWTService jWTService)
+        public UserService(IUserRepository userRepository, ITokenService jWTService)
         {
             _userRepo = userRepository;
             _jWTService = jWTService;
         }
-        public List<User> Users
+        public async Task<List<User>> Users()
         {
-            get
-            {
-                return _userRepo.GetUsers().Result;
-            }
+            return await _userRepo.GetUsers();
+            
         }
 
         public async Task<User> GetUser(string email)
@@ -105,14 +105,10 @@ namespace MyBookLibraryAPI.Services.Implementation
             return success;
         }
 
-        Task<LoginSuccess> IUserService.Login(string email, string password)
+        public async Task DeleteUser(string email)
         {
-            throw new NotImplementedException();
-        }
-
-        Task<RegisterSuccessDto> IUserService.Register(User user, string password)
-        {
-            throw new NotImplementedException();
+            var user = await _userRepo.GetUserByEmail(email);
+            _userRepo.Delete(user);
         }
     }
 }

@@ -15,3 +15,5 @@ C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryServices\obj\Debug\net5.0
 C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryServices\obj\Debug\net5.0\MyBookLibraryServices.dll
 C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryServices\obj\Debug\net5.0\ref\MyBookLibraryServices.dll
 C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryServices\obj\Debug\net5.0\MyBookLibraryServices.pdb
+C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryServices\bin\Debug\net5.0\MyBookLibraryUtility.dll
+C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryServices\bin\Debug\net5.0\MyBookLibraryUtility.pdb

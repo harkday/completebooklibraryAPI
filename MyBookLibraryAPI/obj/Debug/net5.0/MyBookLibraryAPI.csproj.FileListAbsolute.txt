@@ -21,7 +21,6 @@ C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryAPI\bin\Debug\net5.0\Micr
 C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
-C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryAPI\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -65,3 +64,6 @@ C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryAPI\bin\Debug\net5.0\MyBo
 C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryAPI\bin\Debug\net5.0\MyBookLibraryUtility.pdb
 C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryAPI\bin\Debug\net5.0\MyBookLibraryServices.dll
 C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryAPI\bin\Debug\net5.0\MyBookLibraryServices.pdb
+C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryAPI\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryAPI\bin\Debug\net5.0\itextsharp.dll
+C:\Users\hp\source\repos\MyBookLibraryAPI\MyBookLibraryAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

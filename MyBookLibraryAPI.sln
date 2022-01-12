@@ -7,13 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBookLibraryAPI", "MyBookL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBookLibraryModel", "MyBookLibraryModel\MyBookLibraryModel.csproj", "{DE77223A-3B22-49D9-940F-22317965EE2F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBookLibraryCore", "MyBookLibraryCore\MyBookLibraryCore.csproj", "{BE016718-E181-4346-985F-47FFAB07E8E8}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBookLibraryDataAccess", "MyBookLibraryDataAccess\MyBookLibraryDataAccess.csproj", "{50466186-55DB-4232-AAAE-DBC1F6FC9E53}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBookLibraryUtility", "MyBookLibraryUtility\MyBookLibraryUtility.csproj", "{DA341342-A773-43F7-A1E6-FA883528AEC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBookLibraryServices", "MyBookLibraryServices\MyBookLibraryServices.csproj", "{D23B6B95-A422-4E90-A364-7B5F4744325F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBookLibraryServices", "MyBookLibraryServices\MyBookLibraryServices.csproj", "{D23B6B95-A422-4E90-A364-7B5F4744325F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +27,6 @@ Global
 		{DE77223A-3B22-49D9-940F-22317965EE2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE77223A-3B22-49D9-940F-22317965EE2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE77223A-3B22-49D9-940F-22317965EE2F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BE016718-E181-4346-985F-47FFAB07E8E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BE016718-E181-4346-985F-47FFAB07E8E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BE016718-E181-4346-985F-47FFAB07E8E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BE016718-E181-4346-985F-47FFAB07E8E8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{50466186-55DB-4232-AAAE-DBC1F6FC9E53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{50466186-55DB-4232-AAAE-DBC1F6FC9E53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50466186-55DB-4232-AAAE-DBC1F6FC9E53}.Release|Any CPU.ActiveCfg = Release|Any CPU

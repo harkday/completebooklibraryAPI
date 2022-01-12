@@ -9,7 +9,9 @@ namespace MyBookLibraryServices.Repository.Interface
 {
    public  interface ITokenService
     { 
-            string CreateToken(User user);
-        
+        string CreateToken(User user);
+        string GenerateToken(User user, List<string> userRoles);
+
+
     }
 }
