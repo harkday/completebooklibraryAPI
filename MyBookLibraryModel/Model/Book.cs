@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyBookLibraryModel.Data.Model
+namespace MyBookLibraryModel.Model
 {
    public  class Book :BaseEntity
    {
@@ -16,17 +16,15 @@ namespace MyBookLibraryModel.Data.Model
         public int? Rate { get; set; }
         public string  ISBN { get; set; }
         public string Author { get; set; }
-        public string Genre { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
+        public string CoverUrl { get; set; }
+        public string PublicId { get; set; }
         public List<BookUser> BookUsers { get; set; }
 
         public Book()
         {
             BookUsers = new List<BookUser>();
         }
-
-
-
-
-
     }
 }

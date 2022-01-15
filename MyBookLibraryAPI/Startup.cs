@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MyBookLibraryAPI.Controllers.Extension;
 using MyBookLibraryAPI.Services;
+using MyBookLibraryAPI.Services.Implementation;
 using MyBookLibraryAPI.Services.Interface;
 using MyBookLibraryDataAccess;
 using MyBookLibraryDataAccess.Repository;
@@ -42,11 +43,14 @@ namespace MyBookLibraryAPI
             services.AddApplicationServices(Configuration);
             services.AddScoped<ITokenService, TokenService>();
             services.AddControllers();
+            services.AddAutoMapper(typeof(Startup));
             services.AddDbContext<BookDbContext>(options => options.UseSqlServer(ConnectionString));
-            services.AddTransient<IBookService, BookService>();
-            services.AddTransient<IUserService, UserService>();
-            services.AddTransient<IUserRepository, UserRepository>();
-            services.AddTransient<ITokenService, TokenService>();
+            services.AddScoped<IBookService, BookService>();
+            services.AddScoped<IBookRepository, BookRepository>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IClaudinaryService, ClaudinaryService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MyBookLibraryAPI", Version = "v1" });

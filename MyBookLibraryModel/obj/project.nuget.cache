@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "UxY6SdfEBT5efFwSKcIZc7Sw4fqz8zrlKyxI3g/YmKySqpgZdlPT+nZGPwDvyf3iyJzAjr3CDjujtZZcSgHOCw==",
+  "dgSpecHash": "YsBO3dFTrE10eZtdSc+yxaVYwl8rE+J5+HNfpeKdJat/Cxns/AWEylgi4Fa56e7R9Z10OENMIkuyz1UrPokKLQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\hp\\source\\repos\\MyBookLibraryAPI\\MyBookLibraryModel\\MyBookLibraryModel.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.13\\microsoft.aspnetcore.http.features.5.0.13.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

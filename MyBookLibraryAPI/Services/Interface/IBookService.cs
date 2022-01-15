@@ -1,5 +1,7 @@
-﻿using MyBookLibraryAPI.Services.ViewModels;
-using MyBookLibraryModel.Data.Model;
+﻿using Microsoft.AspNetCore.Mvc;
+using MyBookLibraryAPI.Services.ViewModels;
+using MyBookLibraryModel.DTOS;
+using MyBookLibraryModel.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +11,8 @@ namespace MyBookLibraryAPI.Services.Interface
 {
     public interface IBookService
     {
-        void AddBook(BookVM book);
-        bool Update(Book book);
-        bool DeleteBook(Book book);
-        Book GetBookById(int bookId);
-        List<Book> Getallbooks();
-        List<Book> GetBookByCategory(int categoryId);
-        Book GetBookByName(string name);
+        Task<ObjectResult> AddBook(BookToAddDto model);
+        Task<bool> DeleteBook(int bookId);
+        Task<Book> UpdateBook(int bookId, UpDateBookDto model);
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using MyBookLibraryModel.Data.Model;
+using MyBookLibraryModel.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +20,18 @@ namespace MyBookLibraryDataAccess.Repository
 
                 if (!context.Books.Any())
                 {
-                    context.Books.AddRange(new Book()
+                    context.Categories.AddRange(
+                            new Category { 
+                                Name = "Dreama"
+                            },
+                            new Category {
+                                Name = "Fiction"
+                            }
+                        );
+                    context.SaveChanges();
+                  
+                    context.Books.AddRange(
+                        new Book()
                     {
                         Title = "things fall apart",
                         Description = "1st Edition",
@@ -29,11 +40,12 @@ namespace MyBookLibraryDataAccess.Repository
                         Rate = 4,
                         ISBN = "97803854745-SBNT",
                         Author = "Chinua Achebe",
-                        Genre = "fiction",
-                       // BookUsers = {}
+                        CategoryId =1,
+
+                        // BookUsers = {}
 
 
-                    },
+                    },        
                     new Book()
                     {
                         Title = "a new man",
@@ -43,11 +55,15 @@ namespace MyBookLibraryDataAccess.Repository
                         Rate = 4,
                         ISBN = "97803854745-SBNT",
                         Author = "Segun Akanni",
-                        Genre = "fiction",
+                        CategoryId=2
                         //BookUsers = { }
 
-                    } );
+                    }) ;
                     context.SaveChanges();
+
+                    
+
+
 
                 }
             }

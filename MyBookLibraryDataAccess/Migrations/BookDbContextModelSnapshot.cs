@@ -19,7 +19,7 @@ namespace MyBookLibraryDataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
-            modelBuilder.Entity("MyBookLibraryModel.Data.Model.Book", b =>
+            modelBuilder.Entity("MyBookLibraryModel.Model.Book", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -27,6 +27,12 @@ namespace MyBookLibraryDataAccess.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Author")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CoverUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedAt")
@@ -38,14 +44,14 @@ namespace MyBookLibraryDataAccess.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Genre")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("ISBN")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsRead")
                         .HasColumnType("bit");
+
+                    b.Property<string>("PublicId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Rate")
                         .HasColumnType("int");
@@ -58,10 +64,12 @@ namespace MyBookLibraryDataAccess.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId");
+
                     b.ToTable("Books");
                 });
 
-            modelBuilder.Entity("MyBookLibraryModel.Data.Model.BookUser", b =>
+            modelBuilder.Entity("MyBookLibraryModel.Model.BookUser", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -82,6 +90,88 @@ namespace MyBookLibraryDataAccess.Migrations
                     b.HasIndex("BookId");
 
                     b.ToTable("BookUser");
+                });
+
+            modelBuilder.Entity("MyBookLibraryModel.Model.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("MyBookLibraryModel.Model.LogIn", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Logins");
+                });
+
+            modelBuilder.Entity("MyBookLibraryModel.Model.Register", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Registers");
                 });
 
             modelBuilder.Entity("MyBookLibraryModel.Model.User", b =>
@@ -117,16 +207,32 @@ namespace MyBookLibraryDataAccess.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("MyBookLibraryModel.Data.Model.BookUser", b =>
+            modelBuilder.Entity("MyBookLibraryModel.Model.Book", b =>
                 {
-                    b.HasOne("MyBookLibraryModel.Data.Model.Book", null)
+                    b.HasOne("MyBookLibraryModel.Model.Category", "Category")
+                        .WithMany("Books")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("MyBookLibraryModel.Model.BookUser", b =>
+                {
+                    b.HasOne("MyBookLibraryModel.Model.Book", null)
                         .WithMany("BookUsers")
                         .HasForeignKey("BookId");
                 });
 
-            modelBuilder.Entity("MyBookLibraryModel.Data.Model.Book", b =>
+            modelBuilder.Entity("MyBookLibraryModel.Model.Book", b =>
                 {
                     b.Navigation("BookUsers");
+                });
+
+            modelBuilder.Entity("MyBookLibraryModel.Model.Category", b =>
+                {
+                    b.Navigation("Books");
                 });
 #pragma warning restore 612, 618
         }

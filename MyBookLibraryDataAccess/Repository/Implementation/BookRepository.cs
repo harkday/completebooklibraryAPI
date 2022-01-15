@@ -1,5 +1,6 @@
-﻿using MyBookLibraryDataAccess.Repository.Interfaces;
-using MyBookLibraryModel.Data.Model;
+﻿using Microsoft.EntityFrameworkCore;
+using MyBookLibraryDataAccess.Repository.Interfaces;
+using MyBookLibraryModel.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,39 +11,40 @@ namespace MyBookLibraryDataAccess.Repository.Implementation
 {
     public class BookRepository : IBookRepository
     {
-        public bool Addbook(Book book)
+        private readonly BookDbContext _ctx;
+
+        public BookRepository(BookDbContext ctx)
         {
-            throw new NotImplementedException();
+            _ctx = ctx;
         }
 
-        public bool DeleteBook(Book book)
+        public bool Addbook(Book book)
         {
-            throw new NotImplementedException();
+
+            _ctx.Books.Add(book);
+           // _ctx.Books.Add(book);
+            return _ctx.SaveChanges() > 0;
+        }
+
+        public async Task<bool> DeleteBook(Book book)
+        {
+            _ctx.Books.Remove(book);
+            return await _ctx.SaveChangesAsync() > 0;
         }
 
         public List<Book> Getallbooks()
         {
-            throw new NotImplementedException();
+            return _ctx.Books.ToList();
+        }
+        public async Task<Book> GetBookById(int bookId)
+        {
+            return await _ctx.Books.FindAsync(bookId);
         }
 
-        public List<Book> GetBookByCategory(int categoryId)
+        public async Task<bool> Update(Book book)
         {
-            throw new NotImplementedException();
-        }
-
-        public Book GetBookById(int bookId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Book GetBookByName(string name)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Update(Book book)
-        {
-            throw new NotImplementedException();
+            _ctx.Books.Update(book);
+            return await _ctx.SaveChangesAsync() > 0;
         }
     }
 }

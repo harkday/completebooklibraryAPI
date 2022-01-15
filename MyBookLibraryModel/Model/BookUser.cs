@@ -1,6 +1,6 @@
 ﻿using MyBookLibraryModel.Model;
 
-namespace MyBookLibraryModel.Data.Model
+namespace MyBookLibraryModel.Model
 {
     public class BookUser:BaseEntity
     {

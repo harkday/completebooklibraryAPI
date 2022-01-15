@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using MyBookLibraryAPI.Services;
 using MyBookLibraryAPI.Services.Interface;
 using MyBookLibraryAPI.Services.ViewModels;
+using MyBookLibraryModel.DTOS;
+using MyBookLibraryModel.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,35 +12,64 @@ using System.Threading.Tasks;
 
 namespace MyBookLibraryAPI.Controllers
 {
- 
+
     public class BooksController : BaseApiController
     {
-        public IBookService _bookService;
+        private readonly IBookService _bookService;
+
         public BooksController(IBookService bookService)
         {
             _bookService = bookService;
         }
 
         [HttpPost("add-book")]
-        public IActionResult AddBook([FromBody]BookVM book)
+        public async Task<IActionResult> AddBook([FromForm] BookToAddDto model)
         {
-            _bookService.AddBook(book);
-            return Ok();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var res = await _bookService.AddBook(model);
+            return res;
         }
 
-        [HttpGet("get-all-books")]
-        public IActionResult GetAllBooks()
+        [HttpDelete("delete-book/{id}")]
+        public async Task<IActionResult> DeleteBook(int bookId)
         {
-            var allBooks = _bookService.Getallbooks();
-            return Ok(allBooks);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var res = await _bookService.DeleteBook(bookId);
+            return Ok(res);
+        }
+
+        [HttpPut("update-book/{id}")]
+        public async Task<IActionResult> UpdateBook(int bookId, UpDateBookDto model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var res = await _bookService.UpdateBook(bookId, model);
+            return Ok(res);
         }
 
 
-        [HttpGet("get-bookid /{id}")]
-        public IActionResult GetBookById(int id)
-        {
-            var book = _bookService.GetBookById(id);
-            return Ok(book);
-        }
+        //[HttpGet("all-books")]
+        /*  public async Task<IActionResult> GetAllBooks(Book)
+          {
+              if (!ModelState.IsValid)
+              {
+                  return BadRequest(ModelState);
+              }
+              var res = await _bookService.Getallbooks(Book);
+              return Ok();
+
+          }
+        */
+    
+       
     }
 }
